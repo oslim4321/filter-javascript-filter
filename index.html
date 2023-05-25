@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filters Search</title>
+    <link rel="stylesheet" href="bootstrap.css">
+</head>
+<body>
+    <div class="container-fluid text-white py-5" style="background-color: orange;   text-shadow: 2px 2px 5px #FF0000;" >
+    <p style="font-family: Georgia, 'Times New Roman', Times, serif;" class="text-center fs-1">Programming LEARNING</p>
+    <h5 class="text-center">Search Your Best Programming Language</h5>
+    </div>
+
+    <div class="container col-6 mt-5">
+        <input oninput="input()" id="search_box" type="text" class="form-control mb-5 p-3" placeholder="Search language">
+    </div>
+
+
+    <div class="container  col-6">
+
+        <table class="table ">
+          <tbody id="show" class="text-primary h5 ">
+
+           
+          </tbody>
+        </table>
+      </div>
+
+<script>
+
+index=0
+    function display(){
+        show.innerHTML+=`
+        <tr id='allItem'>
+              <td class="list-group-item p-3">HTML</td>
+              <td class="list-group-item p-3">CSS</td>
+              <td class="list-group-item p-3">JAVASCRIPT</td>
+              <td class="list-group-item p-3">PHYTON</td>
+              <td class="list-group-item p-3">SQL</td>
+              <td class="list-group-item p-3">PHP</td>
+              <td class="list-group-item p-3">SQL</td>
+              <td class="list-group-item p-3">ANGULAR</td>
+              <td class="list-group-item p-3">REACT</td>
+              <td class="list-group-item p-3">JSON</td>
+              <td class="list-group-item p-3">JAVA</td>
+              <td class="list-group-item p-3">C++</td>
+              <td class="list-group-item p-3">ASP</td>
+              <td class="list-group-item p-3">AJAX</td>
+              <td class="list-group-item p-3">jQUERY</td>
+              <td class="list-group-item p-3">NODE JS</td>
+            </tr>
+        `
+    }
+    display()
+
+/* 
+    document.getElementById('search_box').addEventListener('input', event)
+
+function event(){
+         //getting input element by ID
+    let SearchItem=document.getElementById('search_box');
+        //passing the value amd the localcase into filter value
+    let filter=SearchItem.value.toLowerCase();
+        //getting all the LI element into List variables
+    let List=document.querySelectorAll('.list-group-item');
+    
+
+    //for every element of mt List
+List.forEach((element) => {
+    //passing the innerHTML into  text variable
+    let text=element.innerHTML;
+
+        //putting it on conditional statement 
+    if (text.toLowerCase().includes(filter.toLowerCase())) {
+        element.style.display='block'
+    }else{
+        element.style.display='none'
+    }
+});
+}
+
+let pare=document.querySelector('#allItem');
+    console.log(pare.children)
+
+
+document.getElementById('butt').addEventListener('input', ok) */
+
+
+function input(){
+   var search= document.getElementById('search_box')
+   var flite=search.value.toUpperCase()
+   var allText = document.querySelectorAll('.list-group-item')
+
+   allText.forEach((element) => {
+       let text=element.innerHTML
+       if(text.toUpperCase().includes(flite.toUpperCase())){
+        element.style.display=''
+       }else{
+           element.style.display='none'
+       }
+   });
+}
+
+const list=[
+    
+    {name: 'selim', class: 'level-4'},
+    {name: 'samad', class: 'level-3'},
+    {name: 'semiat', class: 'level-2'},
+    {name: 'sultan', class: 'level-1'},
+    {name: 'emma',   class: 'level-4'},
+    {name: 'shola', class: 'level-5'},
+    
+];
+
+
+      let newElem=list.filter((list)=>{
+            if(list.class > 'level-3'){
+            return list.class 
+            }
+        })
+        console.log(newElem)
+
+// regex
+let word=[]
+let sorted
+// function filter(){
+//     sorted=word.filter(ele=>elem.search(patter)>=0)
+// }
+
+</script>
+
+</body>
+</html>
